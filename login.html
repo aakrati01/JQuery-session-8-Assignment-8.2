@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login page</title>
+	<style type="text/css">
+		body {
+			background-image: url(greenback.jpg);
+			background-size: cover;
+		}
+
+		div{
+			width: 400px;
+			height: 400px;
+			margin: auto;
+		}
+		button {
+			margin-top: 100px;
+			align-content: center;
+		}
+		.fillers {
+			padding: 16px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<h2> My Page </h2>
+		<p>This is login page</p>
+
+			<form action="Home.html"  >
+			<div class="fillers">
+			<label><b> Email Id </b></label> <!-- username label to write the name -->
+			<input type="text" placeholder="Enter email id" name="Email " required ><br> <!--required attribute is used means this field is necessary to fill-->
+			<br>
+
+			<label><b> Password </b></label>
+			<input type="Password" placeholder="Enter Password" name="paswrd" maxlength="8">
+			<br>
+			<br>
+			<a href="Home.html"><button type=" Submit " class="login_button"><b> Submit Query </b> </button></a>
+			<button type=" Back " class="Back_button"><b> Back </b> </button></a>
+			</form>
+			</div>
+ 	<script type="text/javascript">
+ 	 	$(".fillers").validate({
+	        rules: {
+	            
+	            Email: {
+	                required: true,
+	                email:true
+	            },
+	            paswrd: {
+					required: true,
+					minlength: 5
+				},
+				
+	         errorElement : 'div',
+	        errorPlacement: function(error, element) {
+	          var placement = $(element).data('error');
+	          if (placement) {
+	            $(placement).append(error)
+	          } else {
+	            error.insertAfter(element);
+	          }
+	        }
+	     });
+	     
+    	</script>
+ </script>
+	
+</body>
+</html>
